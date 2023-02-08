@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Marie Acha">
+        <meta charset="utf-8">
+        <link href="css/form.css" rel="stylesheet">
+        <script src="script/validate-generate-image.js"></script>
+        <title>CSIS 1280 Assignment 4</title>
+    </head>
+    <body>
+        <header>
+            <h1>Assignment 4</h1>
+            <h3>Submitted by</h3>
+            <ul>
+                <li>Name: Marie Acha</li>
+                <li>ID: 12345789</li>
+            </ul>
+        </header>
+        <section>
+            <form name="myform" action='' method="get">
+                <fieldset>
+                    <legend>User and Video Data</legend>
+                    <div>
+                        <label for="fullName">Full Name</label>
+                        <input type="text" name="fullName" id="fullName" 
+                        placeholder="Enter your name" required>
+                    </div>
+                    <div>
+                        <label for="memberID">Member ID</label>
+                        <input type="text" name="memberID" id="memberID" pattern="\d{5}M" placeholder="XXXXXM" required>
+                    </div>
+                    <div> 
+                        <label for="image">Select Image</label>
+                        <span>
+                            <select name="image" id="image" required>
+                                <option value="">Please select one option</option>
+                                <option value="images/blueberry.jpg" required>Blueberry</option>
+                                <option value="images/strawberry.jpg" required>Strawberry</option>
+                                <option value="images/blueberry_pancake.jpg" required>Blueberry Pancake</option>
+                                <option value="images/strawberry_cake.jpg" required>Strawberry Cake</option>
+                            </select>
+                        </span>
+                    </div>
+                    
+                    
+                    <div>
+                        <input type="submit" name="submit_input" value="Submit Input" 
+                            onclick="return validateAndGenerate(this.form)">
+                    </div>
+            </fieldset>
+            <fieldset id = "target_image">
+                <legend>Target Image</legend>
+                
+                <div>
+                    <p id="text_target">
+                    </p>
+                </div>
+                
+                <div id="image_style">
+                    <label for="style">Please style the image</label>                    
+                    <span id="button">
+                        <span><input type="radio" name="style" id="style1" onclick="changeBorder()">Border Radius</span>
+                        <span><input type="radio" name="style" id="style2" onclick="changeSepiaFilter()">Sepia Filter</span>
+                        <span><input type="radio" name="style" id="style3" onclick="changeDropShadow()">Drop Shadow</span>
+                    </span>                    
+                </div>
+                <div id="image_target">                    
+                    <img src="" id="image_src" alt="">
+                </div>
+            </fieldset>
+            </form>
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+</html>
